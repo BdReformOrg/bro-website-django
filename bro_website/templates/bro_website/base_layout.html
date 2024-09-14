@@ -1,0 +1,200 @@
+{%extends 'base.html'%}{%load static menu_tags%}
+{% block base_css %}{%spaceless%}
+{% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> {% endcomment %}
+<link rel="stylesheet" href="{%static 'bro_website/style/base.css'%}">
+{%endspaceless%}{% endblock %}{%block body_attrs%}class="-z-50 relative"{%endblock%}{%spaceless%}
+{%endspaceless%}{% block navbar %}{%spaceless%}
+{%endspaceless%}<nav class="navbar bg-neutral text-neutral-content fixed {%if request.toolbar.show_toolbar%}top-[46px]{%else%}top-0{%endif%} w-full z-20">{%spaceless%}
+        <div class="container flex flex-col lg:flex-row relative max-w-7xl mx-auto">
+            <div class="navbar-start flex-nowrap flex-row flex-grow flex-shrink w-full lg:w-1/2 lg:flex-shrink">
+                <div class="brand">
+                    {%endspaceless%}{%block navbar_brand%}{%spaceless%}
+                    <a href="/" class="flex items-center">
+                        <img src="https://picsum.photos/48/48" alt="" class="h-12 object-contain">
+                    <h1 class="text-lg font-light">Lorem, ipsum dolor.</h1>
+                    </a>
+                    {%endspaceless%}{%endblock%}{%spaceless%}
+                    <div class="ms-auto navbar-toggler block lg:hidden">
+                        <label role="button" tabindex="0" for="mobile-drawer-state" class="btn btn-circle btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                                <path fill-rule="evenodd" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75ZM2 8a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 8Zm0 4.25a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+                            </svg>                          
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <input type="checkbox" id="mobile-drawer-state" class="hidden">
+            {%endspaceless%}<div class="navbar-center {%if request.toolbar.show_toolbar%}top-[110px]{%else%}top-[4rem]{%endif%}">{%spaceless%}
+                <ul class="menu lg:menu-horizontal lg:py-0">
+                    {%endspaceless%}{%block navbar_center%}{%show_menu 1 3 0 100 'bro_website/navbar_menu/menu.html'%}{%endblock%}{%spaceless%}
+                </ul>
+            </div>
+
+            <div class="flex navbar-end hidden lg:inline-flex flex-grow w-full lg:w-1/2 ms-auto">
+                {%endspaceless%}{%block navbar_end%}{%spaceless%}
+                <ul class="menu menu-horizontal py-0">
+                    <li><a class="text-primary" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="currentColor" viewBox="0 0 64 64">
+                            <path d="M48,7H16c-4.418,0-8,3.582-8,8v32c0,4.418,3.582,8,8,8h17V38h-6v-7h6v-5c0-7,4-11,10-11c3.133,0,5,1,5,1v6h-4 c-2.86,0-4,2.093-4,4v5h7l-1,7h-6v17h8c4.418,0,8-3.582,8-8V15C56,10.582,52.418,7,48,7z"></path>
+                        </svg>
+                    </a></li>
+                    <li><a class="text-primary" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="currentColor" viewBox="0 0 64 64">
+                            <path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path>
+                            </svg>
+                    </a></li>
+                    <li><a class="text-primary" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="currentColor" viewBox="0 0 50 50">
+                            <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path>
+                        </svg>
+                    </a></li>
+                    <li><a class="text-primary" href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="currentColor" viewBox="0 0 64 64">
+                            <path d="M56.456,17.442c-0.339-1.44-1.421-2.595-2.866-3.053C49.761,13.174,41.454,12,32,12s-17.761,1.174-21.591,2.389 c-1.445,0.458-2.527,1.613-2.866,3.053C6.903,20.161,6,25.203,6,32c0,6.797,0.903,11.839,1.544,14.558 c0.339,1.44,1.421,2.595,2.866,3.053C14.239,50.826,22.546,52,32,52s17.761-1.174,21.591-2.389 c1.445-0.458,2.527-1.613,2.866-3.053C57.097,43.839,58,38.797,58,32C58,25.203,57.097,20.161,56.456,17.442z M27,40V24l14.857,8 L27,40z"></path>
+                            </svg>
+                    </a></li>
+                </ul>
+                {%endspaceless%}{%endblock%}{%spaceless%}
+            </div>
+        </div>
+    </nav>
+    <div class="block -z-40 mb-[4rem]"></div>
+{%endspaceless%}{% endblock %}{%spaceless%}
+
+{%endspaceless%}{% block content %}{{block.super}}{%spaceless%}
+<section class="hero bg-[url('https://picsum.photos/512/256')]"
+{%endspaceless%}style="min-height:calc(100vh - {%if request.toolbar.show_toolbar%}46px - {%endif%}68px)">{%spaceless%}
+<div class="container mx-auto max-w-7xl">
+    <div class="prose max-w-2xl">
+        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae saepe nobis culpa tenetur itaque. Sapiente beatae at, accusamus incidunt ipsam dolorem id a dolore.</p>
+    </div>
+</div>
+</section>
+<section class="py-12">
+    <div class="container max-w-7xl mx-auto flex flex-col lg:flex-wrap lg:flex-row items-center">
+        <div class="w-full lg:w-1/2">
+            <div class="prose">
+                <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam laboriosam enim cumque voluptatum nam excepturi quod nihil, esse commodi. Voluptatum error tempora impedit dolorem eaque dignissimos sunt. Dicta, praesentium quidem.</p>
+            </div>
+        </div>
+        <div class="block w-full lg:w-1/2">
+            <div class="block gap-4" style="columns: 2;">
+                <div class="py-2 rounded-box overflow-clip"><img class="w-full h-full object-contain" src="https://picsum.photos/128/64" alt=""></div>
+                <div class="py-2 rounded-box overflow-clip"><img class="w-full h-full object-contain" src="https://picsum.photos/64/128" alt=""></div>
+                <div class="py-2 rounded-box overflow-clip"><img class="w-full h-full object-contain" src="https://picsum.photos/128/128" alt=""></div>
+                <div class="py-2 rounded-box overflow-clip"><img class="w-full h-full object-contain" src="https://picsum.photos/64/128" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container max-w-7xl mx-auto py-6">
+    <div class="card">
+        <div class="card-body">
+            <div class="article">
+                <h1>Introductions</h1>
+                <h6 class="text-accent">A little about what our movement is all about</h6>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container max-w-7xl mx-auto">
+    <div class="card">
+        <div class="card-body">
+            <div class="max-w-4xl">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam soluta, beatae ipsum assumenda enim eaque unde incidunt laborum quos debitis eum corrupti. Fugiat consequatur dolorem excepturi eos hic perferendis modi.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-secondary text-secondary-content py-12">
+    <div class="container max-w-4xl mx-auto">
+        <div class="card flex flex-col items-center">
+            <p class="card-body text-2xl text-center mb-6">Want to be a part of the revolution? We are looking for someone with your spirit and your confidence to join us in this movement!</p>
+            <a href="#" class="btn btn-lg btn-outline">Join us now!</a>
+        </div>
+    </div>
+</section>
+<section class="bg-primary text-primary-content py-12">
+    <div class="container max-w-2xl mx-auto">
+        <p class="text-3xl text-center mb-6 px-8">Stay in touch! We have a lot to share with you!</p>
+        <div class="flex flex-col lg:flex-row justify-center gap-6 items-center">
+            <div class="form-control flex-grow">
+                <input class="input input-lg" type="email" name="subscriber_email" id="id_subscriber_email" placeholder="your_email@address.com">
+            </div>
+            <button type="submit" class="btn btn-lg">Join our Newsletter</button>
+        </div>
+    </div>
+</section>
+<section class="bg-accent text-accent-content py-12">
+    <div class="container max-w-7xl mx-auto">
+        <div class="card flex flex-col lg:flex-row lg:items-center gap-4">
+            <div class="card-body lg:w-1/2 flex-none">
+                <div class="article">
+                    <h3>Lorem, ipsum dolor.</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste illo pariatur necessitatibus. A, minima reprehenderit.</p>
+                </div>
+                <h3>Lorem ipsum dolor sit amet.</h3>
+            </div>
+            <div class="card bg-base-100/50">
+                <div class="card-body">
+                    <figure>
+                        <img src="https://picsum.photos/512/256" alt="">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{%endspaceless%}{% endblock content %}{%spaceless%}
+
+{%endspaceless%}{%block footer%}{%spaceless%}
+<footer class="flex flex-col bg-base-200 text-base-content p-10">
+    <div class="footer container mx-auto max-w-7xl">
+        <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Social</h6>
+            <div class="flex flex-row gap-4">
+                <a class="text-primary" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="currentColor" viewBox="0 0 64 64">
+                        <path d="M48,7H16c-4.418,0-8,3.582-8,8v32c0,4.418,3.582,8,8,8h17V38h-6v-7h6v-5c0-7,4-11,10-11c3.133,0,5,1,5,1v6h-4 c-2.86,0-4,2.093-4,4v5h7l-1,7h-6v17h8c4.418,0,8-3.582,8-8V15C56,10.582,52.418,7,48,7z"></path>
+                    </svg>
+                </a>
+                <a class="text-primary" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="currentColor" viewBox="0 0 64 64">
+                        <path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"></path>
+                        </svg>
+                </a>
+                <a class="text-primary" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="currentColor" viewBox="0 0 50 50">
+                        <path d="M25,2C12.318,2,2,12.318,2,25c0,3.96,1.023,7.854,2.963,11.29L2.037,46.73c-0.096,0.343-0.003,0.711,0.245,0.966 C2.473,47.893,2.733,48,3,48c0.08,0,0.161-0.01,0.24-0.029l10.896-2.699C17.463,47.058,21.21,48,25,48c12.682,0,23-10.318,23-23 S37.682,2,25,2z M36.57,33.116c-0.492,1.362-2.852,2.605-3.986,2.772c-1.018,0.149-2.306,0.213-3.72-0.231 c-0.857-0.27-1.957-0.628-3.366-1.229c-5.923-2.526-9.791-8.415-10.087-8.804C15.116,25.235,13,22.463,13,19.594 s1.525-4.28,2.067-4.864c0.542-0.584,1.181-0.73,1.575-0.73s0.787,0.005,1.132,0.021c0.363,0.018,0.85-0.137,1.329,1.001 c0.492,1.168,1.673,4.037,1.819,4.33c0.148,0.292,0.246,0.633,0.05,1.022c-0.196,0.389-0.294,0.632-0.59,0.973 s-0.62,0.76-0.886,1.022c-0.296,0.291-0.603,0.606-0.259,1.19c0.344,0.584,1.529,2.493,3.285,4.039 c2.255,1.986,4.158,2.602,4.748,2.894c0.59,0.292,0.935,0.243,1.279-0.146c0.344-0.39,1.476-1.703,1.869-2.286 s0.787-0.487,1.329-0.292c0.542,0.194,3.445,1.604,4.035,1.896c0.59,0.292,0.984,0.438,1.132,0.681 C37.062,30.587,37.062,31.755,36.57,33.116z"></path>
+                    </svg>
+                </a>
+                <a class="text-primary" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="currentColor" viewBox="0 0 64 64">
+                        <path d="M56.456,17.442c-0.339-1.44-1.421-2.595-2.866-3.053C49.761,13.174,41.454,12,32,12s-17.761,1.174-21.591,2.389 c-1.445,0.458-2.527,1.613-2.866,3.053C6.903,20.161,6,25.203,6,32c0,6.797,0.903,11.839,1.544,14.558 c0.339,1.44,1.421,2.595,2.866,3.053C14.239,50.826,22.546,52,32,52s17.761-1.174,21.591-2.389 c1.445-0.458,2.527-1.613,2.866-3.053C57.097,43.839,58,38.797,58,32C58,25.203,57.097,20.161,56.456,17.442z M27,40V24l14.857,8 L27,40z"></path>
+                        </svg>
+                </a>
+            </div>
+          </nav>
+    </div>    
+</footer>
+{%endspaceless%}{%endblock footer%}

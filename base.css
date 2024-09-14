@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+
+@layer base {
+
+    h1:where(.prose h1),
+    h2:where(.prose h2),
+    h3:where(.prose h3),
+    h4:where(.prose h4),
+    h5:where(.prose h5),
+    h6:where(.prose h6) {
+        @apply font-sans font-semibold;
+    }
+
+    h1:where(.article h1),
+    h2:where(.article h2),
+    h3:where(.article h3),
+    h4:where(.article h4),
+    h5:where(.article h5),
+    h6:where(.article h6) {
+        @apply font-serif font-semibold;
+    }
+
+    h1:where(.article h1, .prose h1) {
+        @apply text-3xl md:text-4xl lg:text-5xl;
+    }
+
+    h2:where(.article h2, .prose h2) {
+        @apply text-2xl md:text-3xl lg:text-4xl;
+    }
+
+    h3:where(.article h3, .prose h3) {
+        @apply text-xl md:text-2xl lg:text-3xl;
+    }
+
+    h4:where(.article h4, .prose h4) {
+        @apply text-lg md:text-xl lg:text-2xl;
+    }
+
+    h5:where(.article h5, .prose h5) {
+        @apply text-base md:text-lg lg:text-xl;
+    }
+
+    h6:where(.article h6, .prose h6) {
+        @apply text-base font-medium md:font-semibold md:text-lg;
+    }
+
+    p {
+        @apply font-normal;
+    }
+
+    .brand:where(.navbar .brand) {
+        @apply flex flex-row flex-none items-center justify-start gap-4 px-2;
+    }
+
+    .navbar .navbar-center {
+        @apply transition-transform ease-in-out duration-200 lg:transition-none;
+        @apply fixed bg-neutral left-0 w-72 h-screen;
+        @apply lg:bg-transparent lg:static lg:flex-grow lg:h-auto lg:w-auto;
+    }
+
+    .navbar input[type="checkbox"]:checked+.navbar-center {
+        @apply translate-x-0 lg:translate-x-0;
+    }
+
+    .navbar input[type="checkbox"]:not(:checked)+.navbar-center {
+        @apply -translate-x-full lg:translate-x-0;
+    }
+
+    .navbar .menu a {
+        @apply uppercase font-semibold;
+    }
+
+    .navbar .menu label {
+        @apply uppercase font-semibold;
+    }
+
+    .menu li.active {
+        @apply text-primary;
+    }
+
+}
+
+@tailwind utilities;
+@tailwind variants;

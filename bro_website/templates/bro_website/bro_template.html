@@ -1,0 +1,7 @@
+{%extends 'bro_website/base_layout.html'%}
+{%load cms_tags djangocms_alias_tags%}
+{%block navbar_brand%}{%static_alias 'navbar_brand'%}{%endblock%}
+{%block navbar_center%}{%static_alias 'navbar_center'%}{%endblock%}
+{%block navbar_end%}{%static_alias 'navbar_end'%}{%endblock%}
+{%block content%}{%placeholder 'page_content'%}{%endblock%}
+{%block footer%}{%static_alias 'footer'%}{%endblock%}

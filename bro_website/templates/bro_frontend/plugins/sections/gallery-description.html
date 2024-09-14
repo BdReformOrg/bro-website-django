@@ -1,0 +1,14 @@
+{%load cms_tags%}{%spaceless%}<section class="py-12">
+    {%endspaceless%}<div class="container max-w-7xl mx-auto flex flex-col lg:flex-wrap {%if instance.gallery_on_left%}lg:flex-row-reverse{%else%}lg:flex-row{%endif%} items-center">{%spaceless%}
+        <div class="w-full lg:w-1/2 p-6">
+            {%endspaceless%}<div class="prose max-w-lg text-center {%if instance.gallery_on_left%}lg:text-end{%else%}lg:text-start{%endif%}">{%spaceless%}
+                {%endspaceless%}{%if instance.child_plugin_instances%}{%render_plugin instance.child_plugin_instances.0%}{%endif%}{%spaceless%}
+            </div>
+        </div>
+        <div class="block w-full lg:w-1/2 p-6">
+            <div class="block gap-4" style="columns: 2;">
+                {%endspaceless%}{%for plugin in instance.child_plugin_instances%}{%if forloop.counter0 > 0%}{%render_plugin plugin%}{%endif%}{%endfor%}{%spaceless%}
+            </div>
+        </div>
+    </div>
+</section>{%endspaceless%}
