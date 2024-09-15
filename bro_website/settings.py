@@ -185,6 +185,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = str(BASE_DIR / os.getenv('STATIC_ROOT'))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -237,4 +238,4 @@ INTERNAL_IPS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#media-root
 
 MEDIA_URL = "media/"
-MEDIA_ROOT = str(BASE_DIR.parent / "media")
+MEDIA_ROOT = str(BASE_DIR.parent / os.getenv('MEDIA_ROOT'))
