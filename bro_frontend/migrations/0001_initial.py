@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('cms', '0037_alter_cmsplugin_id_alter_globalpagepermission_id_and_more'),
+        ('cms', '0035_auto_20230822_2208'),
         migrations.swappable_dependency(settings.FILER_IMAGE_MODEL),
     ]
 

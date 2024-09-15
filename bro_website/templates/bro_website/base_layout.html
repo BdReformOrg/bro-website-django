@@ -4,6 +4,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> {% endcomment %}
 <link rel="stylesheet" href="{%static 'bro_website/style/base.css'%}">
+<style>
+    {%if request.toolbar.edit_mode_active%}template{display:none!important;width:0px!important;}{%endif%}
+</style>
 {%endspaceless%}{% endblock %}{%block body_attrs%}class="-z-50 relative"{%endblock%}{%spaceless%}
 {%endspaceless%}{% block navbar %}{%spaceless%}
 {%endspaceless%}<nav class="navbar bg-neutral text-neutral-content fixed {%if request.toolbar.show_toolbar%}top-[46px]{%else%}top-0{%endif%} w-full z-20">{%spaceless%}

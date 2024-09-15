@@ -22,3 +22,6 @@ class BoxedImageModel(CMSPlugin):
 
 class GalleryDescriptionModel(CMSPlugin):
     gallery_on_left = models.BooleanField(default=False, blank=True)
+
+class AccordionItemModel(CMSPlugin):
+    title = models.CharField(default='', max_length=255)

@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.11 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -517,14 +517,14 @@ html {
 }
 
 :root {
-  --p: 78.9867% 0.157208 169.510314;
-  --b2: 91.6721% 0.027058 132.582806;
-  --b3: 84.772% 0.025021 132.582806;
-  --bc: 19.7144% 0.005819 132.582806;
-  --pc: 15.7973% 0.031442 169.510314;
-  --sc: 13.1187% 0.046561 34.524388;
-  --ac: 11.3242% 0.0295 246.585044;
-  --nc: 84.216% 0.001964 173.154534;
+  --p: 61.6661% 0.070136 130.235663;
+  --b2: 88.5626% 0.035845 97.438867;
+  --b3: 81.8966% 0.033147 97.438867;
+  --bc: 19.0457% 0.007709 97.438867;
+  --pc: 12.3332% 0.014027 130.235663;
+  --sc: 89.9864% 0.031719 24.992802;
+  --ac: 18.067% 0.015206 96.986774;
+  --nc: 19.2697% 0.001466 132.415201;
   --inc: 16.507% 0.029029 214.086302;
   --suc: 14.4662% 0.033137 159.23528;
   --wac: 15.3206% 0.032952 71.204439;
@@ -538,10 +538,10 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --s: 65.5936% 0.232804 34.524388;
-  --a: 56.6209% 0.1475 246.585044;
-  --n: 21.0798% 0.009819 173.154534;
-  --b1: 98.5721% 0.029094 132.582806;
+  --s: 49.932% 0.158593 24.992802;
+  --a: 90.335% 0.07603 96.986774;
+  --n: 96.3485% 0.007328 132.415201;
+  --b1: 95.2286% 0.038543 97.438867;
   --in: 82.5352% 0.145145 214.086302;
   --su: 72.331% 0.165684 159.23528;
   --wa: 76.603% 0.164761 71.204439;
@@ -550,14 +550,14 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --p: 93.0708% 0.228585 123.090167;
-    --b2: 15.6399% 0.004163 264.447307;
-    --b3: 14.4627% 0.00385 264.447307;
-    --bc: 83.3634% 0.000895 264.447307;
-    --pc: 18.6142% 0.045717 123.090167;
-    --sc: 13.1187% 0.046561 34.524388;
-    --ac: 11.3242% 0.0295 246.585044;
-    --nc: 83.3634% 0.000895 264.447307;
+    --p: 54.126% 0.07242 149.345385;
+    --b2: 14.8639% 0.008236 129.107087;
+    --b3: 13.7451% 0.007616 129.107087;
+    --bc: 83.1965% 0.001771 129.107087;
+    --pc: 90.8252% 0.014484 149.345385;
+    --sc: 85.6909% 0.022096 29.738054;
+    --ac: 18.067% 0.015206 96.986774;
+    --nc: 87.6269% 0.007742 129.671616;
     --inc: 16.507% 0.029029 214.086302;
     --suc: 14.4662% 0.033137 159.23528;
     --wac: 15.3206% 0.032952 71.204439;
@@ -571,10 +571,10 @@ html {
     --border-btn: 1px;
     --tab-border: 1px;
     --tab-radius: 0.5rem;
-    --s: 65.5936% 0.232804 34.524388;
-    --a: 56.6209% 0.1475 246.585044;
-    --n: 16.8171% 0.004477 264.447307;
-    --b1: 16.8171% 0.004477 264.447307;
+    --s: 28.4545% 0.110479 29.738054;
+    --a: 90.335% 0.07603 96.986774;
+    --n: 38.1343% 0.03871 129.671616;
+    --b1: 15.9827% 0.008856 129.107087;
     --in: 82.5352% 0.145145 214.086302;
     --su: 72.331% 0.165684 159.23528;
     --wa: 76.603% 0.164761 71.204439;
@@ -583,14 +583,14 @@ html {
 }
 
 [data-theme=light] {
-  --p: 78.9867% 0.157208 169.510314;
-  --b2: 91.6721% 0.027058 132.582806;
-  --b3: 84.772% 0.025021 132.582806;
-  --bc: 19.7144% 0.005819 132.582806;
-  --pc: 15.7973% 0.031442 169.510314;
-  --sc: 13.1187% 0.046561 34.524388;
-  --ac: 11.3242% 0.0295 246.585044;
-  --nc: 84.216% 0.001964 173.154534;
+  --p: 61.6661% 0.070136 130.235663;
+  --b2: 88.5626% 0.035845 97.438867;
+  --b3: 81.8966% 0.033147 97.438867;
+  --bc: 19.0457% 0.007709 97.438867;
+  --pc: 12.3332% 0.014027 130.235663;
+  --sc: 89.9864% 0.031719 24.992802;
+  --ac: 18.067% 0.015206 96.986774;
+  --nc: 19.2697% 0.001466 132.415201;
   --inc: 16.507% 0.029029 214.086302;
   --suc: 14.4662% 0.033137 159.23528;
   --wac: 15.3206% 0.032952 71.204439;
@@ -604,10 +604,10 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --s: 65.5936% 0.232804 34.524388;
-  --a: 56.6209% 0.1475 246.585044;
-  --n: 21.0798% 0.009819 173.154534;
-  --b1: 98.5721% 0.029094 132.582806;
+  --s: 49.932% 0.158593 24.992802;
+  --a: 90.335% 0.07603 96.986774;
+  --n: 96.3485% 0.007328 132.415201;
+  --b1: 95.2286% 0.038543 97.438867;
   --in: 82.5352% 0.145145 214.086302;
   --su: 72.331% 0.165684 159.23528;
   --wa: 76.603% 0.164761 71.204439;
@@ -615,14 +615,14 @@ html {
 }
 
 [data-theme=dark] {
-  --p: 93.0708% 0.228585 123.090167;
-  --b2: 15.6399% 0.004163 264.447307;
-  --b3: 14.4627% 0.00385 264.447307;
-  --bc: 83.3634% 0.000895 264.447307;
-  --pc: 18.6142% 0.045717 123.090167;
-  --sc: 13.1187% 0.046561 34.524388;
-  --ac: 11.3242% 0.0295 246.585044;
-  --nc: 83.3634% 0.000895 264.447307;
+  --p: 54.126% 0.07242 149.345385;
+  --b2: 14.8639% 0.008236 129.107087;
+  --b3: 13.7451% 0.007616 129.107087;
+  --bc: 83.1965% 0.001771 129.107087;
+  --pc: 90.8252% 0.014484 149.345385;
+  --sc: 85.6909% 0.022096 29.738054;
+  --ac: 18.067% 0.015206 96.986774;
+  --nc: 87.6269% 0.007742 129.671616;
   --inc: 16.507% 0.029029 214.086302;
   --suc: 14.4662% 0.033137 159.23528;
   --wac: 15.3206% 0.032952 71.204439;
@@ -636,14 +636,30 @@ html {
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --s: 65.5936% 0.232804 34.524388;
-  --a: 56.6209% 0.1475 246.585044;
-  --n: 16.8171% 0.004477 264.447307;
-  --b1: 16.8171% 0.004477 264.447307;
+  --s: 28.4545% 0.110479 29.738054;
+  --a: 90.335% 0.07603 96.986774;
+  --n: 38.1343% 0.03871 129.671616;
+  --b1: 15.9827% 0.008856 129.107087;
   --in: 82.5352% 0.145145 214.086302;
   --su: 72.331% 0.165684 159.23528;
   --wa: 76.603% 0.164761 71.204439;
   --er: 59.0758% 0.220455 23.975354;
+}
+
+@keyframe appear{
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+section{
+  animation: appear 0.1s linear;
+  animation-timeline: view(block 50% 10%);
+  animation-fill-mode: both;
 }
 
 h1:where(.prose h1),
@@ -4371,6 +4387,18 @@ details.collapse summary::-webkit-details-marker {
   width: 0.25rem;
 }
 
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-52 {
   width: 13rem;
 }
@@ -4557,6 +4585,32 @@ details.collapse summary::-webkit-details-marker {
   border-width: 1px;
 }
 
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-base-100 {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-border-opacity)));
+}
+
+.border-base-content {
+  --tw-border-opacity: 1;
+  border-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-border-opacity)));
+}
+
+.border-base-content\/25 {
+  border-color: var(--fallback-bc,oklch(var(--bc)/0.25));
+}
+
+.border-base-content\/50 {
+  border-color: var(--fallback-bc,oklch(var(--bc)/0.5));
+}
+
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-a,oklch(var(--a)/var(--tw-bg-opacity)));
@@ -4581,6 +4635,11 @@ details.collapse summary::-webkit-details-marker {
   background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity)));
 }
 
+.bg-base-content {
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-bc,oklch(var(--bc)/var(--tw-bg-opacity)));
+}
+
 .bg-neutral {
   --tw-bg-opacity: 1;
   background-color: var(--fallback-n,oklch(var(--n)/var(--tw-bg-opacity)));
@@ -4598,10 +4657,6 @@ details.collapse summary::-webkit-details-marker {
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-base-100\/25 {
-  background-color: var(--fallback-b1,oklch(var(--b1)/0.25));
 }
 
 .bg-\[url\(\'https\:\/\/picsum\.photos\/512\/256\'\)\] {
@@ -4657,6 +4712,11 @@ details.collapse summary::-webkit-details-marker {
   padding-right: 1rem;
 }
 
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -4672,9 +4732,9 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 3rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .py-4 {
@@ -4682,14 +4742,9 @@ details.collapse summary::-webkit-details-marker {
   padding-bottom: 1rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pb-0 {
@@ -4823,6 +4878,11 @@ details.collapse summary::-webkit-details-marker {
   color: var(--fallback-pc,oklch(var(--pc)/var(--tw-text-opacity)));
 }
 
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: var(--fallback-s,oklch(var(--s)/var(--tw-text-opacity)));
+}
+
 .text-secondary-content {
   --tw-text-opacity: 1;
   color: var(--fallback-sc,oklch(var(--sc)/var(--tw-text-opacity)));
@@ -4854,12 +4914,12 @@ details.collapse summary::-webkit-details-marker {
 .backdrop-blur-xl {
   --tw-backdrop-blur: blur(24px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .backdrop-filter {
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {
@@ -4905,6 +4965,18 @@ details.collapse summary::-webkit-details-marker {
 
   .table-zebra .hover\:hover:hovertr:hover,
   .table-zebra .hover\:hover:hovertr:nth-child(even):hover {
+    --tw-bg-opacity: 1;
+    background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity)));
+  }
+
+  .table .disabled\:hover:disabledtr:hover,
+  .table .disabled\:hover:disabledtr:nth-child(even):hover {
+    --tw-bg-opacity: 1;
+    background-color: var(--fallback-b2,oklch(var(--b2)/var(--tw-bg-opacity)));
+  }
+
+  .table-zebra .disabled\:hover:disabledtr:hover,
+  .table-zebra .disabled\:hover:disabledtr:nth-child(even):hover {
     --tw-bg-opacity: 1;
     background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity)));
   }

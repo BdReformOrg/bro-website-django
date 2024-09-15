@@ -1,0 +1,15 @@
+{% extends "djangocms_alias/base.html" %}
+{% load i18n cms_tags %}
+
+{% block aliases_content %}
+    <div class="cms-aliases-page p-4 border border-dashed border-base-content/25">
+        <h2 class="cms-aliases-page-heading text-2xl bg-base-300 text-base-content py-4 px-2 border-b border-base-content/50" id="{{ alias_content.name|slugify }}">
+            <span class="cms-aliases-page-heading-inner">
+                {{ alias_content.name|title }}
+            </span>
+        </h2>
+        <div class="cms-aliases-detail">
+          {% render_placeholder alias_content.placeholder %}
+        </div>
+    </div>
+{% endblock aliases_content %}

@@ -128,6 +128,7 @@ THUMBNAIL_PROCESSORS = (
 )
 
 WSGI_APPLICATION = 'bro_website.wsgi.application'
+ASGI_APPLICATION = 'bro_website.asgi.application'
 
 
 # Database
