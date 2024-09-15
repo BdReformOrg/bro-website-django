@@ -15,23 +15,24 @@ https://docs.django-cms.org/en/release-4.1.x/reference/configuration.html
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+load_dotenv(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*4m2^*&xkyss3__3g+iw+a(h(f_jn(cv$71%9b$!cr4ufys)jl'
-
+SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [host.lower().strip() for host in os.getenv('ALLOWED_HOSTS').split(',')]
+INTERNAL_IPS = [host.lower().strip() for host in os.getenv('INTERNAL_IPS').split(',')]
 
 
 # Application definition
