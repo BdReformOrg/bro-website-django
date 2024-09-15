@@ -4,6 +4,8 @@ module.exports = {
     './base.css',
     './bro_website/static/**/*.{css,js}',
     './bro_website/templates/**/*.html',
+    './bro_frontend/static/**/*.{css,js}',
+    './bro_frontend/templates/**/*.html',
   ],
   theme: {
     extend: {
@@ -20,11 +22,11 @@ module.exports = {
     themes: [
       {
         'light': {
-          "primary": "#00daaa",
-          "secondary": "#ff4000",
-          "accent": "#007bc7",
-          "neutral": "#141a18",
-          "base-100": "#f3ffeb",
+          "primary": "#778e61",
+          "secondary": "#ab3131",
+          "accent": "#ede0a6",
+          "neutral": "#f1f4ef",
+          "base-100": "#f6f0d3",
           "info": "#00ddff",
           "success": "#00c47f",
           "warning": "#f39e00",
@@ -33,11 +35,11 @@ module.exports = {
       },
       {
         'dark': {
-          "primary": "#ccff00",
-          "secondary": "#ff4000",
-          "accent": "#007bc7",
-          "neutral": "#0e0f11",
-          "base-100": "#0e0f11",
+          "primary": "#507b58",
+          "secondary": "#540502",
+          "accent": "#ede0a6",
+          "neutral": "#3c4731",
+          "base-100": "#0c0e0a",
           "info": "#00ddff",
           "success": "#00c47f",
           "warning": "#f39e00",

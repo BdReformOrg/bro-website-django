@@ -1,0 +1,7 @@
+{%load cms_tags%}<ul class="menu py-12">
+  <li><h6 class="menu-title">Lorem.</h6></li>
+  <li><a href="">Lorem ipsum.</a></li>
+  <li><a href="">Lorem ipsum.</a></li>
+  <li><a href="">Lorem ipsum.</a></li>
+</ul>
+{%for plugin in instance.child_plugin_instances%}{%render_plugin plugin%}{%endfor%}

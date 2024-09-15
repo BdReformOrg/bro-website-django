@@ -1,0 +1,8 @@
+{%load cms_tags%}{%spaceless%}<section class="hero"
+{%endspaceless%}style="min-height:calc(100vh - {%if request.toolbar.show_toolbar%}46px - {%endif%}68px); background-image:url('{{instance.image.url}}')">{%spaceless%}
+<div class="container mx-auto max-w-7xl">
+    {%if instance.child_plugin_instances%}
+    <div class="prose max-w-2xl py-12 px-6 backdrop-blur-xl bg-base-100/50 rounded-box">{%for plugin in instance.child_plugin_instances%}{%render_plugin plugin%}{%endfor%}</div>
+    {%endif%}
+</div>
+</section>{%endspaceless%}

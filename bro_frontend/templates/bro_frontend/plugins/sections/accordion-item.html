@@ -1,0 +1,10 @@
+{%load cms_tags%}
+<div class="collapse collapse-arrow{%if request.toolbar.edit_mode_active%} collapse-open{%endif%}">
+<input type="radio" name="accordion-item-{{parent}}"{%if index == 0%} checked="checked"{%endif%}/>
+                <div class="collapse-title text-xl font-medium">{{instance.title}}</div>
+                <div class="collapse-content">
+                    <div class="prose">
+                        {%for child in instance.child_plugin_instances%}{%render_plugin child%}{%endfor%}
+                    </div>
+                </div>
+            </div>
