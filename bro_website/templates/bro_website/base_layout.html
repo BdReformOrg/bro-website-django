@@ -13,12 +13,9 @@
         <div class="container flex flex-col lg:flex-row relative max-w-7xl mx-auto">
             <div class="navbar-start flex-nowrap flex-row flex-grow flex-shrink w-full lg:w-1/2 lg:flex-shrink">
                 <div class="brand">
-                    {%endspaceless%}{%block navbar_brand%}{%spaceless%}
                     <a href="/" class="flex items-center">
-                        <img src="https://picsum.photos/48/48" alt="" class="h-12 object-contain">
-                    <h1 class="text-lg font-light">Lorem, ipsum dolor.</h1>
+                        {%endspaceless%}{%block navbar_brand%}{%endblock%}{%spaceless%}
                     </a>
-                    {%endspaceless%}{%endblock%}{%spaceless%}
                     <div class="ms-auto navbar-toggler block lg:hidden">
                         <label role="button" tabindex="0" for="mobile-drawer-state" class="btn btn-circle btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">

@@ -4,7 +4,7 @@
     <div class="card">
       <div class="card-body">
         <div class="flex{%if instance.gallery_on_left%} flex-reverse-row{%else%} flex-row{%endif%}">
-          <div class="block flex-none w-2/3">
+          <div class="flex flex-col justify-center flex-none w-2/3">
             <div class="prose">
           {%endspaceless%}{%if instance.child_plugin_instances.0%}
           {%render_plugin instance.child_plugin_instances.0%}

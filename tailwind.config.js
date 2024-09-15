@@ -4,6 +4,8 @@ module.exports = {
     './base.css',
     './bro_website/static/**/*.{css,js}',
     './bro_website/templates/**/*.html',
+    './bro_frontend/static/**/*.{css,js}',
+    './bro_frontend/templates/**/*.html',
   ],
   theme: {
     extend: {

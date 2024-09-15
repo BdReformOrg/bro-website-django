@@ -1,4 +1,6 @@
 from pathlib import Path
+
+from cms.models import CMSPlugin
 from django.utils.translation import gettext_lazy as _
 from cms.plugin_pool import plugin_pool
 from cms.plugin_base import CMSPluginBase
@@ -29,6 +31,7 @@ class HeroSectionImage(CMSPluginBase):
     module=_('Section')
     model=models.HeroSectionImageModel
     render_template=_template('sections', 'hero-image.html')
+    allow_children = True
 
 @plugin_pool.register_plugin
 class GalleryDescription(CMSPluginBase):
@@ -128,3 +131,17 @@ class BoxedImage(CMSPluginBase):
     module=_('Utils')
     model=models.BoxedImageModel
     render_template=_template('utils', 'image-boxed.html')
+
+@plugin_pool.register_plugin
+class ButtonGroup(CMSPluginBase):
+    module = _('Utils')
+    render_template = _template('utils', 'button-group.html')
+    allow_children = True
+    child_classes = ['Link']
+
+@plugin_pool.register_plugin
+class Link(CMSPluginBase):
+    module = _('Utils')
+    model = models.LinkModel
+    render_template = _template('utils', 'link.html')
+    text_enabled = True
