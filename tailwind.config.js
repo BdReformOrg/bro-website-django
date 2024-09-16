@@ -10,8 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Bitter', 'ui-serif', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif'],
-        sans: ['Raleway', 'ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
+        sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
       }
     },
   },
@@ -22,15 +21,16 @@ module.exports = {
     themes: [
       {
         'light': {
-          "primary": "#778e61",
-          "secondary": "#ab3131",
-          "accent": "#ede0a6",
-          "neutral": "#f1f4ef",
-          "base-100": "#f6f0d3",
+          "primary": "#bef264",
+          "secondary": "#0d9488",
+          "accent": "#022c22",
+          "neutral": "#fff7ed",
+          "base-100": "#ffffff",
           "info": "#00ddff",
           "success": "#00c47f",
           "warning": "#f39e00",
           "error": "#e32535",
+          "--rounded-btn": "9999rem",
         },
       },
       {

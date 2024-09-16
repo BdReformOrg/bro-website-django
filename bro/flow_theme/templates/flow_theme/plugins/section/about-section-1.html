@@ -1,0 +1,12 @@
+{%load cms_tags%}<section class="p-4">
+    <div class="card bg-primary text-primary-content">
+        <div class="card-body container mx-auto">
+            <div class="prose">
+                <h6 class="border-b border-primary-content/20 py-4 mb-4">{{instance.section_title}}</h6>
+                <div class="flex flex-col md:flex-row mt-16">
+                    {%for block in instance.child_plugin_instances%}{%render_plugin block%}{%endfor%}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

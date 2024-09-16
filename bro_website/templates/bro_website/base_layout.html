@@ -1,15 +1,15 @@
 {%extends 'base.html'%}{%load static menu_tags%}
 {% block base_css %}{%spaceless%}
-{% comment %} <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> {% endcomment %}
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{%static 'bro_website/style/base.css'%}">
 <style>
     {%if request.toolbar.edit_mode_active%}template{display:none!important;width:0px!important;}{%endif%}
 </style>
 {%endspaceless%}{% endblock %}{%block body_attrs%}class="-z-50 relative"{%endblock%}{%spaceless%}
 {%endspaceless%}{% block navbar %}{%spaceless%}
-{%endspaceless%}<nav class="navbar bg-neutral text-neutral-content fixed {%if request.toolbar.show_toolbar%}top-[46px]{%else%}top-0{%endif%} w-full z-20">{%spaceless%}
+{%endspaceless%}<nav class="navbar h-20 bg-neutral border-b border-neutral/15 shadow text-neutral-content fixed {%if request.toolbar.show_toolbar%}top-[46px]{%else%}top-0{%endif%} w-full z-20">{%spaceless%}
         <div class="container flex flex-col lg:flex-row relative max-w-7xl mx-auto">
             <div class="navbar-start flex-nowrap flex-row flex-grow flex-shrink w-full lg:w-1/2 lg:flex-shrink">
                 <div class="brand">
@@ -28,9 +28,9 @@
             </div>
             
             <input type="checkbox" id="mobile-drawer-state" class="hidden">
-            {%endspaceless%}<div class="navbar-center {%if request.toolbar.show_toolbar%}top-[110px]{%else%}top-[4rem]{%endif%}">{%spaceless%}
+            {%endspaceless%}<div class="navbar-center {%if request.toolbar.show_toolbar%}top-[126px]{%else%}top-[5rem]{%endif%}">{%spaceless%}
                 <ul class="menu lg:menu-horizontal lg:py-0">
-                    {%endspaceless%}{%block navbar_center%}{%show_menu 1 3 0 100 'bro_website/navbar_menu/menu.html'%}{%endblock%}{%spaceless%}
+                    {%endspaceless%}{%block navbar_center%}{%show_menu 1 3 1 100 'bro_website/navbar_menu/menu.html'%}{%endblock%}{%spaceless%}
                 </ul>
             </div>
 
@@ -66,15 +66,13 @@
 {%endspaceless%}{% endblock %}{%spaceless%}
 
 {%endspaceless%}{% block content %}{{block.super}}{%spaceless%}
-<section class="hero bg-[url('https://picsum.photos/512/256')]"
-{%endspaceless%}style="min-height:calc(100vh - {%if request.toolbar.show_toolbar%}46px - {%endif%}68px)">{%spaceless%}
-<div class="container mx-auto max-w-7xl">
-    <div class="prose max-w-2xl">
-        <h2>Lorem ipsum dolor sit amet consectetur.</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae saepe nobis culpa tenetur itaque. Sapiente beatae at, accusamus incidunt ipsam dolorem id a dolore.</p>
-    </div>
-</div>
-</section>
+{%include 'flow_theme/hero_section.html'%}
+{%include 'flow_theme/logo_carousel.html'%}
+{%include 'flow_theme/emphasis_section.html'%}
+{%include 'flow_theme/blog_type_1.html'%}
+{%include 'flow_theme/2_col_about_section.html'%}
+{%include 'flow_theme/blog_type_2.html'%}
+{%include 'flow_theme/404.html'%}
 <section class="py-12">
     <div class="container max-w-7xl mx-auto flex flex-col lg:flex-wrap lg:flex-row items-center">
         <div class="w-full lg:w-1/2">

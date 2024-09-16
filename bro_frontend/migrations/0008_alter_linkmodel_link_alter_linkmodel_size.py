@@ -8,7 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('bro_frontend', '0007_linkmodel_size_alter_linkmodel_label_and_more'),
-        ('cms', '0035_auto_20230822_2208_squashed_0036_auto_20240311_1028'),
+        ('cms', '0035_auto_20230822_2208'),
     ]
 
     operations = [

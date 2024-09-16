@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     'djangocms_frontend.contrib.utilities',
 
     'bro_frontend',
+    'bro.flow_theme',
 ]
 
 MIDDLEWARE = [

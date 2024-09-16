@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('bro_frontend', '0004_accordionitemmodel'),
-        ('cms', '0035_auto_20230822_2208_squashed_0036_auto_20240311_1028'),
+        ('cms', '0035_auto_20230822_2208'),
     ]
 
     operations = [
