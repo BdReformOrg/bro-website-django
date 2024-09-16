@@ -41,6 +41,13 @@ class BlogSection2(CMSPluginBase):
     allow_children=True
     require_parent=False
 
+class FlowAboutTwoThirdBlock(CMSPluginBase):
+    module=SECTION_MODULE
+    name=_('Flow: Testimonial Section 1')
+    render_template=_template('section', 'testimonial-section-1.html')
+    allow_children=True
+    require_parent=False
+
 class AboutSection1(CMSPluginBase):
     module=SECTION_MODULE
     name=_('Flow: About Section 1')
@@ -48,7 +55,7 @@ class AboutSection1(CMSPluginBase):
     render_template=_template('section', 'about-section-1.html')
     allow_children=True
     require_parent=False
-    child_classes=['TwoThirdBlock', 'OneThirdBlock']
+    child_classes=['FlowAboutTwoThirdBlock', 'FlowAboutOneThirdBlock']
 
 class AboutSection2(CMSPluginBase):
     module=SECTION_MODULE
