@@ -6,10 +6,10 @@ from cms.plugin_base import CMSPluginBase
 from . import apps, models
 
 SECTION_MODULE = _('Flow: Sections')
+UTILS_MODULE = _('Flow: Utils')
 
 def _template(*args):
     return Path(apps.FlowThemeConfig.label, 'plugins', *args).as_posix()
-
 
 class FlowHeroSection1(CMSPluginBase):
     module=SECTION_MODULE
@@ -86,6 +86,27 @@ class TeamsSection1(CMSPluginBase):
     allow_children=True
     require_parent=False
 
+class FlowGroupPlugin(CMSPluginBase):
+    module=UTILS_MODULE
+    name=_('Flow: Group')
+    render_template=_template('utils', 'group.html')
+    allow_children=True
+    require_parent=False
+
+class FlowButtonPlugin(CMSPluginBase):
+    module=UTILS_MODULE
+    model=models.FlowLinkModel
+    name=_('Flow: Button')
+    render_template=_template('utils', 'link-button.html')
+    allow_children=True
+    child_classes=['TextPlugin']
+    require_parent=False
+
 plugin_pool.register_plugin(FlowHeroSection1)
 plugin_pool.register_plugin(FlowIconCarousel1)
 plugin_pool.register_plugin(AboutSection1)
+
+plugin_pool.register_plugin(FlowGroupPlugin)
+plugin_pool.register_plugin(FlowButtonPlugin)
+
+plugin_pool.register_plugin(FlowAboutTwoThirdBlock)

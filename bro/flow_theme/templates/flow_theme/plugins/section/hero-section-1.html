@@ -5,7 +5,7 @@
             {%if instance.left_image%}<img class="object-cover w-full h-full" src="{{instance.left_image.url}}" alt="">{%endif%}
         </div>
         <div class="container px-4 mx-auto max-w-2xl xl:max-w-5xl flex-none">
-            <div class="display max-w-2xl mx-auto text-center">
+            <div class="display max-w-2xl mx-auto text-center flex flex-col items-center gap-6">
                 {%for child in instance.child_plugin_instances%}
                 {%render_plugin child%}
                 {%empty%}
