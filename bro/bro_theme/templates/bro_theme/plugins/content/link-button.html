@@ -1,0 +1,5 @@
+<a href="{{instance.linked_url}}" class="{{instance.combined_attribs}}">
+    {% if instance.use_child_plugins %}
+    {% load cms_tags %}{% for child in instance.child_plugin_instances %}{% render_plugin child %}{% endfor %}
+    {% else %}{{instance.display_name}}{% endif %}
+</a>

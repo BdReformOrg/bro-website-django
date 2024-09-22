@@ -1,0 +1,9 @@
+{% load static cms_tags %}
+<section class="relative bro-footer pt-16{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %} bg-left-bottom bg-no-repeat bg-contain"
+style="background-image: url('{% static 'bro_theme/images/waves-lines.png' %}');">
+    <div class="container mx-auto">
+        {% for child in instance.child_plugin_instances %}
+        {% render_plugin child %}
+        {% endfor %}
+    </div>
+</section>

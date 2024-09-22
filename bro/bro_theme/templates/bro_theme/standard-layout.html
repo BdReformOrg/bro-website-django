@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static menu_tags cms_tags djangocms_alias_tags %}
+{% block base_css %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'bro_theme/style/base.css'%}">
+    <style>
+    {% if request.toolbar.edit_mode_active %}
+    template{
+        display:none !important;
+    }
+    {% endif %}
+    </style>
+{% endblock %}
+{% block body_attrs %}class="-z-50 relative min-h-screen bg-base-300"{% endblock %}
+{% block navbar %}{% static_alias 'navbar' %}{% endblock %}
+{% block content %}{{block.super}}{% endblock content %}
+{% block footer %}{% static_alias 'footer' %}
+{% endblock footer %}

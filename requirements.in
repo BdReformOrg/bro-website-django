@@ -1,7 +1,12 @@
-django<5.1  # Temporarily pin Django to <5.1 until easy-thumbnails is compatible
+daphne
+django
+django-cms
 djangocms-versioning
 djangocms-alias
 djangocms-frontend
 django-filer
 djangocms-text-ckeditor
-django-fsm<3
+django-fsm
+django-browser-reload
+django-debug-toolbar
+python-dotenv

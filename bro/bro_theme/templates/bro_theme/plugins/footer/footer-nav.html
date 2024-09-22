@@ -1,0 +1,12 @@
+<ul class="menu w-full flex-grow">
+    {% load cms_tags %}
+    {% for child in instance.child_plugin_instances %}
+    <li>{% render_plugin child %}</li>
+    {% empty %}
+    <li><a href="#">Dummy</a></li>
+    <li><a href="#">Dummy</a></li>
+    <li><a href="#">Dummy</a></li>
+    <li><a href="#">Dummy</a></li>
+    {% endfor %}
+    
+</ul>

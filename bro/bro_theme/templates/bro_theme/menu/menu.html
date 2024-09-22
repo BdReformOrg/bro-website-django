@@ -1,0 +1,23 @@
+{% load menu_tags %}
+{% for child in children %}
+<li>
+	{% if child.children %}
+	<details class="z-30">
+        <summary>
+            <a class="{% if child.selected %} active{% endif %}{% if child.ancestor %} focus{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}"
+                href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+                {{ child.get_menu_title }}
+            </a>
+        </summary>
+        <ul class="min-w-52">
+            {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+        </ul>
+    </details>
+    {% else %}
+    <a class="{% if child.selected %} active{% endif %}{% if child.ancestor %} focus{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}"
+    href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
+    {{ child.get_menu_title }}
+    </a>
+	{% endif %}
+</li>
+{% endfor %}

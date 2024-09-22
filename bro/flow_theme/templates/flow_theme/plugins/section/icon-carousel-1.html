@@ -1,7 +1,0 @@
-{%load cms_tags%}<section class="flex flex-col items-center px-4 py-12 lg:py-24 bg-neutral w-full">
-    <div class="inline-flex flex-row gap-8 items-center flex-nowrap overflow-auto">
-        {%for plugin in instance.child_plugin_instances%}
-            <img class="rounded-box" src="{{plugin.img_src}}" alt="">
-        {%endfor%}
-    </div>
-</section>

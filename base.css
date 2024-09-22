@@ -1,109 +1,95 @@
 @tailwind base;
 @tailwind components;
+@tailwind utilities;
+@tailwind variants;
 
 @layer base {
-
-    h1:where(.prose h1),
-    h2:where(.prose h2),
-    h3:where(.prose h3),
-    h4:where(.prose h4),
-    h5:where(.prose h5),
-    h6:where(.prose h6) {
-        @apply font-light tracking-tighter leading-loose mb-4;
+    .container {
+        @apply px-3 lg:px-0;
     }
 
-    h1:where(.prose h1) {
-        @apply text-4xl md:text-5xl lg:text-6xl;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-medium;
     }
 
-    h2:where(.prose h2) {
-        @apply text-3xl md:text-4xl lg:text-5xl;
-    }
-
-    h3:where(.prose h3) {
-        @apply text-2xl md:text-3xl lg:text-4xl;
-    }
-
-    h4:where(.prose h4) {
-        @apply text-xl md:text-2xl lg:text-3xl;
-    }
-
-    h5:where(.prose h5) {
-        @apply text-lg md:text-xl lg:text-2xl;
-    }
-
-    h6:where(.prose h6) {
-        @apply text-xs md:text-sm lg:text-sm font-bold;
-    }
-
-    h1:where(.display h1),
-    h2:where(.display h2),
-    h3:where(.display h3),
-    h4:where(.display h4),
-    h5:where(.display h5),
-    h6:where(.display h6) {
-        @apply font-medium mb-2 leading-loose tracking-tighter mb-4;
-    }
-
-    h1:where(.display h1) {
-        @apply text-6xl md:text-7xl lg:text-8xl;
-    }
-
-    h2:where(.display h2) {
+    h1 {
         @apply text-5xl md:text-6xl lg:text-7xl;
     }
 
-    h3:where(.display h3) {
+    h2 {
         @apply text-4xl md:text-5xl lg:text-6xl;
     }
 
-    h4:where(.display h4) {
+    h3 {
         @apply text-3xl md:text-4xl lg:text-5xl;
     }
 
-    h5:where(.display h5) {
+    h4 {
         @apply text-2xl md:text-3xl lg:text-4xl;
     }
 
+    h5 {
+        @apply text-xl md:text-2xl lg:text-3xl;
+    }
+
+    h6 {
+        @apply text-lg md:text-xl lg:text-2xl;
+    }
+
+    p {
+        @apply font-normal;
+    }
+
+    h1:where(.prose h1) {
+        @apply mb-4 leading-snug tracking-tight;
+    }
+
+    h2:where(.prose h2) {
+        @apply mb-4 leading-snug tracking-tight;
+    }
+
+    h3:where(.prose h3) {
+        @apply mb-4 leading-snug tracking-tight;
+    }
+
+    h4:where(.prose h4) {
+        @apply mb-4 leading-snug tracking-tight;
+    }
+
+    h5:where(.prose h5) {
+        @apply mb-4 leading-snug tracking-tight;
+    }
+
+    h6:where(.prose h6) {
+        @apply mb-4 leading-snug tracking-tight;
+    }
+
+    h1:where(.display h1) {
+        @apply text-5xl md:text-6xl lg:text-8xl mb-4 leading-snug tracking-tight;
+    }
+
+    h2:where(.display h2) {
+        @apply text-3xl md:text-4xl lg:text-6xl mb-4 leading-snug tracking-tight;
+    }
+
+    h3:where(.display h3) {
+        @apply text-xl md:text-2xl lg:text-4xl mb-4 leading-snug tracking-tight;
+    }
+
+    h4:where(.display h4) {
+        @apply text-lg md:text-xl lg:text-2xl mb-4 leading-snug tracking-tight;
+    }
+
+    h5:where(.display h5) {
+        @apply text-base md:text-lg lg:text-xl mb-4 leading-snug tracking-tight;
+    }
+
     h6:where(.display h6) {
-        @apply text-xs md:text-sm lg:text-sm font-bold;
+        @apply text-xs md:text-sm lg:text-base mb-4 leading-snug tracking-tight;
     }
-
-    p:where(.display p) {
-        @apply text-xl;
-    }
-
-    .brand:where(.navbar .brand) {
-        @apply flex flex-row flex-none items-center justify-start gap-4 px-2;
-    }
-
-    .navbar .navbar-center {
-        @apply transition-transform ease-in-out duration-200 lg:transition-none;
-        @apply fixed bg-primary left-0 w-72 h-screen;
-        @apply lg:bg-transparent lg:static lg:flex-grow lg:h-auto lg:w-auto;
-    }
-
-    .navbar input[type="checkbox"]:checked+.navbar-center {
-        @apply translate-x-0 lg:translate-x-0;
-    }
-
-    .navbar input[type="checkbox"]:not(:checked)+.navbar-center {
-        @apply -translate-x-full lg:translate-x-0;
-    }
-
-    .navbar .menu a {
-        @apply uppercase font-semibold;
-    }
-
-    .navbar .menu label {
-        @apply uppercase font-semibold;
-    }
-
-    a:where(.menu li.active > a) {
-        @apply text-secondary;
-    }
-
 }
-
-@tailwind utilities;
-@tailwind variants;

@@ -1,0 +1,6 @@
+<div class="block col-span-1">
+    {% load cms_tags %}
+    {% for child in instance.child_plugin_instances %}
+    {% render_plugin child %}
+    {% endfor %}
+</div>

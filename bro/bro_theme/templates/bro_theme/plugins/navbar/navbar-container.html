@@ -1,0 +1,14 @@
+<header class="fixed{% if request.toolbar.show_toolbar %} top-[46px]{% else %} top-[0px]{% endif %} inset-x-0 z-20 {% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %} border-b border-base-300/15">
+<nav class="relative navbar container mx-auto max-w-7xl">
+    {% load cms_tags %}
+    <div class="navbar-start">
+        {% if instance.child_plugin_instances.0 %}{% render_plugin instance.child_plugin_instances.0 %}{% endif %}
+    </div>
+    <div class="navbar-center">
+        {% if instance.child_plugin_instances.1 %}{% render_plugin instance.child_plugin_instances.1 %}{% endif %}
+    </div>
+    <div class="navbar-end">
+        {% if instance.child_plugin_instances.2 %}{% render_plugin instance.child_plugin_instances.2 %}{% endif %}
+    </div>
+</nav>
+</header>

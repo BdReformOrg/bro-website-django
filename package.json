@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "start": "npx tailwindcss -w -i ./base.css -o ./bro_website/static/bro_website/style/base.css"
+        "start": "npx tailwindcss -w -i ./base.css -o ./static/bro_theme/style/base.css"
     },
     "devDependencies": {
     "tailwindcss": "latest",

@@ -1,6 +1,10 @@
-.env
+.venv/
+.vscode/
 .idea/
+.env
 **/*.sqlite3
 **/*.pyc
-**/__pycache__
-node_modules
+**/__pycache__/
+mediafiles/
+staticfiles/
+node_modules/
