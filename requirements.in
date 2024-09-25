@@ -1,5 +1,7 @@
 daphne
 django
+django-browser-reload
+django-debug-toolbar
 django-cms
 djangocms-versioning
 djangocms-alias

@@ -15,6 +15,8 @@ https://docs.django-cms.org/en/release-4.1.x/reference/configuration.html
 
 import os
 from pathlib import Path
+
+from django.conf.global_settings import CSRF_TRUSTED_ORIGINS
 from dotenv import load_dotenv
 
 from django.utils.translation import gettext_lazy as _
@@ -33,12 +35,13 @@ DEBUG = bool(os.getenv('DEBUG'))
 
 ALLOWED_HOSTS = [host.lower().strip() for host in os.getenv('ALLOWED_HOSTS').split(',')]
 INTERNAL_IPS = [host.lower().strip() for host in os.getenv('INTERNAL_IPS').split(',')]
+CSRF_TRUSTED_ORIGINS = [host.lower().strip() for host in os.getenv('TRUSTED_ORIGINS').split(',')]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    # 'daphne',
+    'daphne',
     'djangocms_admin_style',
 
     'django.contrib.admin',

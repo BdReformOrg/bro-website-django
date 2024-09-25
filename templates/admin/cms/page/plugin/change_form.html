@@ -1,0 +1,8 @@
+{% extends "admin/cms/page/plugin/change_form.html" %}
+{% load static %}
+{% block field_sets %}
+<link rel="stylesheet" href="{% static 'bro_theme/style/base.css' %}">
+{% for fieldset in adminform %}
+{% include "admin/includes/fieldset.html" %}
+{% endfor %}
+{% endblock %}

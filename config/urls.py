@@ -28,6 +28,7 @@ if settings.DEBUG is True:
     urlpatterns += [
         path("__reload__/", include("django_browser_reload.urls")),
     ] + debug_toolbar_urls()
+
 urlpatterns += i18n_patterns(
     path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('admin/', admin.site.urls),
