@@ -31,7 +31,7 @@ load_dotenv(BASE_DIR / '.env')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.getenv('DEBUG'))
+DEBUG = bool(os.getenv('DEBUG') == 'True')
 
 ALLOWED_HOSTS = [host.lower().strip() for host in os.getenv('ALLOWED_HOSTS').split(',')]
 INTERNAL_IPS = [host.lower().strip() for host in os.getenv('INTERNAL_IPS').split(',')]
