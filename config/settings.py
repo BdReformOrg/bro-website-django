@@ -15,11 +15,11 @@ https://docs.django-cms.org/en/release-4.1.x/reference/configuration.html
 
 import os
 from pathlib import Path
-
-from django.conf.global_settings import CSRF_TRUSTED_ORIGINS
 from dotenv import load_dotenv
 
 from django.utils.translation import gettext_lazy as _
+
+gettext = lambda s: s
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,7 +35,6 @@ DEBUG = bool(os.getenv('DEBUG'))
 
 ALLOWED_HOSTS = [host.lower().strip() for host in os.getenv('ALLOWED_HOSTS').split(',')]
 INTERNAL_IPS = [host.lower().strip() for host in os.getenv('INTERNAL_IPS').split(',')]
-CSRF_TRUSTED_ORIGINS = [host.lower().strip() for host in os.getenv('TRUSTED_ORIGINS').split(',')]
 
 
 # Application definition
@@ -184,8 +183,29 @@ LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
     ("en", _("English")),
+    ("bn", _("Bengali")),
     # Add additional languages here
 ]
+CMS_LANGUAGES = {
+    1:[
+        {
+            'code': 'en',
+            'name': gettext('English'),
+            'fallbacks': ['bn'],
+            'public': True,
+            'hide_untranslated': False,
+            'redirect_on_fallback': False,
+        },
+        {
+            'code': 'bn',
+            'name': gettext('Bengali'),
+            'fallbacks': ['en'],
+            'public': True,
+            'hide_untranslated': False,
+            'redirect_on_fallback': False,
+        },
+    ]
+}
 
 TIME_ZONE = 'UTC'
 
@@ -226,7 +246,7 @@ CMS_TEMPLATES = (
 # Enable permissions
 # https://docs.django-cms.org/en/release-4.1.x/topics/permissions.html
 
-CMS_PERMISSION = True
+CMS_PERMISSION = False
 
 # Allow admin sidebar to open admin URLs
 

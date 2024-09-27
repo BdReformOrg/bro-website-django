@@ -160,6 +160,8 @@ class ImageModel(CMSPlugin):
 
     @property
     def get_alt(self):
+        if self.image is None:
+            return 'blank'
         if self.alt_text is not None:
             return self.alt_text
         else:

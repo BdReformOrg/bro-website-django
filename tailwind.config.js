@@ -1,83 +1,78 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './base.css',
-    './bro/**/models.py',
-    './bro/**/templates/**/*.html',
-    './bro/**/static/**/*.{css,js}',
-    './templates/**/*.html',
+    "base.css",
+    "bro/**/static/**/*.{css,js}",
+    "bro/**/templates/**/*.html",
+    "static/**/*.{css,js}",
+    "templates/**/*.html",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"]
-      }
+      fontFamily: (theme) => ({
+        sans: ['Figtree']
+      }),
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            h1: {
+              fontWeight: '300',
+            },
+            h2: {
+              fontWeight: '300',
+            },
+            h3: {
+              fontWeight: '400',
+            },
+            h4: {
+              fontWeight: '400',
+            },
+            h5: {
+              fontWeight: '500',
+            },
+            h6: {
+              fontWeight: '500',
+            }
+          }
+        }
+      }),
     },
   },
   plugins: [
-    require('daisyui')
+    require("@tailwindcss/typography"),
+    require("daisyui")
   ],
   daisyui: {
     themes: [
       {
         light: {
-          primary: '#507B58',
-          secondary: '#AB3131',
-          accent: '#EDE0A6',
-          neutral: '#F7EAEA',
-          'base-100': '#ffffff',
-          info: '#00ddff',
-          success: '#00c47f',
-          warning: '#f39e00',
-          error: '#e32535',
-          '--rounded-btn': '9999rem',
-        },
+          "primary": "#4CAF50", // Green
+          "secondary": "#8BC34A", // Light Green
+          "accent": "#FFF7ED", // Lime
+          "neutral": "#F5F5F5", // Light Gray
+          "base-100": "#FFFFFF", // White
+          "info": "#2196F3", // Blue
+          "success": "#4CAF50", // Green
+          "warning": "#FF9800", // Orange
+          "error": "#F44336", // Red
+          "--rounded-btn": "100rem"
+        }
       },
       {
         dark: {
-          primary: '#094a25',
-          secondary: '#bc2023',
-          accent: '#f8b324',
-          neutral: '#134e4a',
-          'base-100': '#032b2a',
-          info: '#00ddff',
-          success: '#00c47f',
-          warning: '#f39e00',
-          error: '#e32535',
-          '--rounded-btn': '9999rem',
-        },
-      },
+          "primary": "#4CAF50", // Green
+          "secondary": "#8BC34A", // Light Green
+          "accent": "#FFF7ED", // Lime
+          "neutral": "#454545", // Light Gray
+          "base-100": "#222222", // White
+          "info": "#2196F3", // Blue
+          "success": "#4CAF50", // Green
+          "warning": "#FF9800", // Orange
+          "error": "#F44336", // Red
+          "--rounded-btn": "100rem"
+        }
+      }
     ],
-    darkTheme: 'dark'
+    darkTheme: 'light'
   }
 }
-
-// themes: [
-//   {
-//     'light': {
-//       "primary": "#bef264",
-//       "secondary": "#0d9488",
-//       "accent": "#022c22",
-//       "neutral": "#fff7ed",
-//       "base-100": "#ffffff",
-//       "info": "#00ddff",
-//       "success": "#00c47f",
-//       "warning": "#f39e00",
-//       "error": "#e32535",
-//       "--rounded-btn": "9999rem",
-//     },
-//   },
-//   {
-//     'dark': {
-//       "primary": "#507b58",
-//       "secondary": "#540502",
-//       "accent": "#ede0a6",
-//       "neutral": "#3c4731",
-//       "base-100": "#0c0e0a",
-//       "info": "#00ddff",
-//       "success": "#00c47f",
-//       "warning": "#f39e00",
-//       "error": "#e32535",
-//     },
-//   }
-// ],

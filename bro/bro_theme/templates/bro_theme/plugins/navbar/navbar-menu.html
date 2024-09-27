@@ -1,4 +1,4 @@
-<div class="fixed lg:static z-30 bg-base-200 lg:bg-transparent w-72 lg:w-auto border-2 lg:border-0 border-base-300/15 bottom-0 left-0{% if request.toolbar.show_toolbar %} top-[126px]{% else %} top-[80px]{% endif %}">
+<div class="toggleable lg:toggleable-none fixed lg:static z-30 bg-base-200 lg:bg-transparent w-72 lg:w-auto border-2 lg:border-0 border-base-300/15 bottom-0 left-0 overflow-auto lg:overflow-visible{% if request.toolbar.show_toolbar %} top-[126px]{% else %} top-[80px]{% endif %}">
     <ul class="menu lg:menu-horizontal">
         {% load menu_tags %}
         {% with i=instance %}
@@ -6,4 +6,3 @@
         {% endwith %}
     </ul>
 </div>
-<label for="" class="fixed lg:hidden inset-0 -z-10 bg-base-300/60 backdrop-blur-sm"></label>

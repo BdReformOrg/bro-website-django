@@ -2,8 +2,9 @@
     "scripts": {
         "start": "npx tailwindcss -w -i ./base.css -o ./static/bro_theme/style/base.css"
     },
-    "devDependencies": {
-    "tailwindcss": "latest",
-    "daisyui": "latest"
+    "dependencies": {
+        "tailwindcss": "latest",
+        "daisyui": "latest",
+        "@tailwindcss/typography": "latest"
     }
 }

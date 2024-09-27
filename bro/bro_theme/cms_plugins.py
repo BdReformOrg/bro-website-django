@@ -60,7 +60,6 @@ class BroImage(CMSPluginBase):
     allow_children=False
     text_enabled=True
 
-
 class BroFooterSubscription(CMSPluginBase):
     module=SECTION_MODULE
     render_template=_template('footer', 'footer-subscription.html')
