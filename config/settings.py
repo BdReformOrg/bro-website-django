@@ -34,6 +34,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = bool(os.getenv('DEBUG') == 'True')
 
 ALLOWED_HOSTS = [host.lower().strip() for host in os.getenv('ALLOWED_HOSTS').split(',')]
+CSRF_TRUSTED_ORIGINS = [host.lower().strip() for host in os.getenv('CSRF_TRUSTED_ORIGINS').split(',')]
 INTERNAL_IPS = [host.lower().strip() for host in os.getenv('INTERNAL_IPS').split(',')]
 
 
