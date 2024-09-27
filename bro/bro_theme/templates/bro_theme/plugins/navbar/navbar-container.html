@@ -1,22 +1,46 @@
-<header class="fixed{% if request.toolbar.show_toolbar %} top-[46px]{% else %} top-[0px]{% endif %} inset-x-0 z-20 {% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %} border-b border-base-300/15">
-<nav class="relative navbar container mx-auto max-w-7xl">
-    {% load cms_tags %}
-    <div class="navbar-start">
-        <label for="toggleable-{{instance.id}}" class="btn btn-ghost btn-square rounded-sm lg:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>              
-        </label>
-        {% if instance.child_plugin_instances.0 %}{% render_plugin instance.child_plugin_instances.0 %}{% endif %}
+{%load cms_tags menu_tags%}
+<header class="fixed z-30 w-screen{% if request.toolbar.show_toolbar %} top-[46px]{% else %} top-[0px]{% endif %}{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %} border-b border-base-content/15">
+    <div class="container navbar">
+        <div class="navbar-start">
+            <label for="navbar-toggle-{{instance.id}}" class="btn btn-square btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+            </label>
+            {% if instance.child_plugin_instances.0 %}{% render_plugin instance.child_plugin_instances.0 %}{% endif %}
+        </div>
+        <input id="navbar-toggle-{{instance.id}}" type="checkbox" class="navbar-collapse-state">
+        <label for="navbar-toggle-{{instance.id}}" class="navbar-collapse-backdrop"></label>
+        <div class="navbar-center navbar-collapse">
+            <label for="navbar-toggle-{{instance.id}}" class="btn btn-square btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+            </label>
+            {%comment%}
+            <ul class="menu lg:menu-horizontal">
+                <li><a href="">Lorem.</a></li>
+                <li><a href="">Lorem.</a></li>
+                <li>
+                    <details>
+                        <summary>Lorem.</summary>
+                        <ul></ul>
+                    </details>
+                </li>
+                <li><a href="">Lorem.</a></li>
+                <li><a href="">Lorem.</a></li>
+            </ul>
+            {%endcomment%}
+            <ul class="menu lg:menu-horizontal">
+            {% with parent_id=instance.id %}
+            {% if instance.child_plugin_instances.1 %}{% render_plugin instance.child_plugin_instances.1 %}{% endif %}
+            {% endwith %}
+            </ul>
+        </div>
+        <div class="flex navbar-end">
+            <ul class="menu menu-horizontal w-auto ms-auto">
+                {% if instance.child_plugin_instances.2 %}{% render_plugin instance.child_plugin_instances.2 %}{% endif %}
+            </ul>
+        </div>
     </div>
-    <input type="checkbox" id="toggleable-{{instance.id}}" class="hidden toggleable-state">
-    <div class="navbar-center toggleable-container">
-        {% with parent_id=instance.id %}
-        {% if instance.child_plugin_instances.1 %}{% render_plugin instance.child_plugin_instances.1 %}{% endif %}
-        {% endwith %}
-    </div>
-    <div class="navbar-end">
-        {% if instance.child_plugin_instances.2 %}{% render_plugin instance.child_plugin_instances.2 %}{% endif %}
-    </div>
-</nav>
 </header>

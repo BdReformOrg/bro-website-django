@@ -1,12 +1,14 @@
-<section class="relative{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
-    <div class="container hero mx-auto min-h-screen">
-        <div class="card items-center justify-center">
-            <div class="card-body">
-                <div class="prose prose-xl">
-                        {% load cms_tags %}
-                        {% for child in instance.child_plugin_instances %}
-                        {% render_plugin child %}
-                        {% endfor %}
+<section class="{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
+    <div class="hero">
+        {% if instance.image %}<img class="w-full h-full object-cover" src="{{instance.image.url}}" alt="">
+        <div class="hero-overlay bg-base-100/50"></div>{% endif %}
+        <div class="hero-content card">
+            <div class="card-body hero min-h-screen">
+                <div class="prose prose-2xl prose-headings:my-2 text-center">
+                    {% load cms_tags %}
+                    {% for child in instance.child_plugin_instances %}
+                    {% render_plugin child %}
+                    {% endfor %}
                 </div>
             </div>
         </div>

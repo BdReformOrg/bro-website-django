@@ -1,8 +1,10 @@
-<section class="relative py-16 px-6 {% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
-    <div class="container mx-auto flex flex-col items-center gap-8 rounded-box overflow-clip">
-        {% load cms_tags %}
-        {% for child in instance.child_plugin_instances %}
-        {% render_plugin child %}
-        {% endfor %}
+<section class="{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
+    <div class="container">
+        <div class="card">
+            <div class="card-body prose max-w-full">
+                {% load cms_tags %}
+                {% for child in instance.child_plugin_instances %}{% render_plugin child %}{% endfor %}
+            </div>
+        </div>
     </div>
 </section>

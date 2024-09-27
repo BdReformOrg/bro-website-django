@@ -5,6 +5,58 @@
 
 @layer base {
     body {
-        @apply min-h-screen bg-gradient-to-br from-accent to-primary bg-fixed;
+        @apply bg-base-300 bg-fixed min-h-screen;
+    }
+
+    .card {
+        @apply card-compact md:card-normal;
+    }
+
+    .container {
+        @apply mx-auto max-w-6xl;
+    }
+
+    .navbar {
+        @apply z-30;
+    }
+
+    .navbar-collapse-state {
+        @apply hidden;
+    }
+
+    .navbar-collapse:where(.navbar-collapse-state ~ .navbar-collapse) {
+        @apply fixed lg:static flex-col lg:flex-row bg-base-100 lg:bg-transparent inset-y-0 left-0 w-72 lg:w-auto items-start lg:items-center transition-transform duration-150 z-20;
+    }
+
+    .menu:where(.navbar-collapse-state ~ .navbar-collapse > .menu) {
+        @apply w-72 lg:w-auto h-full lg:h-auto overflow-auto lg:overflow-visible;
+    }
+
+    .navbar-collapse:where(.navbar-collapse-state:not(:checked) ~ .navbar-collapse) {
+        @apply -translate-x-full lg:translate-x-0;
+    }
+
+    .navbar-collapse:where(.navbar-collapse-state:checked ~ .navbar-collapse) {
+        @apply translate-x-0;
+    }
+
+    .navbar-collapse-backdrop:where(.navbar-collapse-state ~ .navbar-collapse-backdrop) {
+        @apply fixed z-10 inset-0 bg-base-content/50 w-screen lg:hidden transition-all duration-150;
+    }
+
+    .navbar-collapse-backdrop:where(.navbar-collapse-state:not(:checked) ~ .navbar-collapse-backdrop) {
+        @apply opacity-0 pointer-events-none;
+    }
+
+    .navbar-collapse-backdrop:where(.navbar-collapse-state:checked ~ .navbar-collapse-backdrop) {
+        @apply opacity-100 pointer-events-auto;
+    }
+
+    .photo-card {
+        @apply p-2 bg-base-100 rounded-box flex items-center justify-center border border-base-200;
+    }
+
+    img:where(.photo-card > img) {
+        @apply w-full h-full object-cover rounded-box border border-base-200;
     }
 }
