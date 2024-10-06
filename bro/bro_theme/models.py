@@ -120,16 +120,45 @@ class ColorMixin(models.Model):
     background_color = models.CharField(max_length=31, choices=BACKGROUND_COLORS, default=None, null=True, blank=True)
     foreground_color = models.CharField(max_length=31, choices=FOREGROUND_COLORS, default=None, null=True, blank=True)
 
+class ImageMixin(models.Model):
+    class Meta:
+        abstract = True
+
+    image = FilerImageField(on_delete=models.SET_NULL, related_name='+', null=True, blank=True, default=None)
+    scale_type = models.CharField(max_length=31, choices=OBJECT_SCALE_TYPES, default=None, null=True, blank=True)
+    width = models.CharField(max_length=15, default=None, null=True, blank=True)
+    height = models.CharField(max_length=15, default=None, null=True, blank=True)
+    alt_text = models.CharField(max_length=255, default=None, null=True, blank=True)
+
+    @property
+    def combined_classes(self):
+        return f'{self.scale_type}'.strip() if self.scale_type not in [None, ''] else ''
+
+    @property
+    def get_size(self):
+        style = f'width:{self.width};' if self.width not in [None, ''] else ''
+        style += f'height:{self.height};' if self.height not in [None, ''] else ''
+        return style.strip()
+
+    @property
+    def get_alt(self):
+        if self.image is None:
+            return 'blank'
+        if self.alt_text is not None:
+            return self.alt_text
+        else:
+            return self.image.name
+
 class MenuMixin(models.Model):
     class Meta:
-        abstract=True
+        abstract = True
 
     start_level = models.IntegerField(default=0, blank=True)
     end_level = models.IntegerField(default=100, blank=True)
     extra_inactive = models.IntegerField(default=2, blank=True)
     extra_active = models.IntegerField(default=2, blank=True)
 
-class SectionModel(CMSPlugin, ColorMixin):
+class SectionModel(CMSPlugin, ColorMixin, BackgroundImageMixin):
     is_full_width = models.BooleanField(default=False)
     is_inner = models.BooleanField(default=False)
 
@@ -174,31 +203,8 @@ class ButtonModel(CMSPlugin):
         base += ' btn-outline' if self.outline_only is True else ''
         return base.strip()
 
-class ImageModel(CMSPlugin):
-    image = FilerImageField(on_delete=models.SET_NULL, related_name='+', null=True, blank=True, default=None)
-    scale_type = models.CharField(max_length=31, choices=OBJECT_SCALE_TYPES, default=None, null=True, blank=True)
-    width = models.CharField(max_length=15, default=None, null=True, blank=True)
-    height = models.CharField(max_length=15, default=None, null=True, blank=True)
-    alt_text = models.CharField(max_length=255, default=None, null=True, blank=True)
-
-    @property
-    def combined_classes(self):
-        return f'{self.scale_type}'.strip() if self.scale_type not in [None, ''] else ''
-
-    @property
-    def get_size(self):
-        style = f'width:{self.width};' if self.width not in [None, ''] else ''
-        style += f'height:{self.height};' if self.height not in [None, ''] else ''
-        return style.strip()
-
-    @property
-    def get_alt(self):
-        if self.image is None:
-            return 'blank'
-        if self.alt_text is not None:
-            return self.alt_text
-        else:
-            return self.image.name
+class ImageModel(CMSPlugin, ImageMixin):
+    pass
 
 class MenuModel(CMSPlugin, MenuMixin):
     pass
