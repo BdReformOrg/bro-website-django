@@ -1,7 +1,7 @@
 <section class="{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
     <div class="hero">
-        {% if instance.image %}<img class="w-full h-full object-cover" src="{{instance.image.url}}" alt="">
-        <div class="hero-overlay bg-base-100/50"></div>{% endif %}
+        {% if instance.image %}<img class="w-full object-cover h-screen" src="{{instance.image.url}}" alt="">
+        <div class="hero-overlay bg-base-100/50 opacity-50"></div>{% endif %}
         <div class="hero-content card">
             <div class="card-body hero min-h-screen">
                 <div class="prose prose-2xl prose-headings:my-2 text-center{% if instance.foreground_color %} {{instance.foreground_color}} prose-headings:{{instance.foreground_color}}{% endif %}">
