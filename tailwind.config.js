@@ -66,8 +66,8 @@ module.exports = {
           "primary": "#4CAF50", // Green
           "secondary": "#8BC34A", // Light Green
           "accent": "#FFF7ED", // Lime
-          "neutral": "#454545", // Light Gray
-          "base-100": "#222222", // White
+          "neutral": "#454545", // Dark Gray
+          "base-100": "#222222", // Neutral Blackish
           "info": "#2196F3", // Blue
           "success": "#4CAF50", // Green
           "warning": "#FF9800", // Orange
