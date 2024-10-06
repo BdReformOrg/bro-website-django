@@ -158,7 +158,7 @@ class MenuMixin(models.Model):
     extra_inactive = models.IntegerField(default=2, blank=True)
     extra_active = models.IntegerField(default=2, blank=True)
 
-class SectionModel(CMSPlugin, ColorMixin, BackgroundImageMixin):
+class SectionModel(CMSPlugin, ColorMixin, ImageMixin):
     is_full_width = models.BooleanField(default=False)
     is_inner = models.BooleanField(default=False)
 
