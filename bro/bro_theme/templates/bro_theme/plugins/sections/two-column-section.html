@@ -3,7 +3,7 @@
     {% for child in instance.child_plugin_instances %}
     <div class="card md:w-1/2">
         <div class="card-body">
-            <div class="prose">
+            <div class="prose{% if instance.foreground_color %} {{instance.foreground_color}} prose-headings:{{instance.foreground_color}}{% endif %}">
                 {% render_plugin child %}
             </div>
         </div>

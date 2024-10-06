@@ -1,12 +1,5 @@
-<ul class="menu w-full flex-grow">
-    {% load cms_tags %}
-    {% for child in instance.child_plugin_instances %}
-    <li>{% render_plugin child %}</li>
-    {% empty %}
-    <li><a href="#">Dummy</a></li>
-    <li><a href="#">Dummy</a></li>
-    <li><a href="#">Dummy</a></li>
-    <li><a href="#">Dummy</a></li>
-    {% endfor %}
-    
-</ul>
+{% load cms_tags menu_tags %}
+<nav>
+<h6 class="footer-title">{{instance.title}}</h6>
+{% show_menu 0 0 1 1 "bro_theme/menu/footer-menu.html" %}
+</nav>

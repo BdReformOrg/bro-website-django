@@ -52,6 +52,29 @@ FOREGROUND_COLORS = [
     ('text-error-content', _('Error Content')),
 ]
 
+HEADING_COLORS = [
+    ('prose-headings:text-base-100', _('Base-100')),
+    ('prose-headings:text-base-200', _('Base-200')),
+    ('prose-headings:text-base-300', _('Base-300')),
+    ('prose-headings:text-base-content', _('Base Content')),
+    ('prose-headings:text-primary', _('Primary')),
+    ('prose-headings:text-primary-content', _('Primary Content')),
+    ('prose-headings:text-secondary', _('Secondary')),
+    ('prose-headings:text-secondary-content', _('Secondary Content')),
+    ('prose-headings:text-accent', _('Accent')),
+    ('prose-headings:text-accent-content', _('Accent Content')),
+    ('prose-headings:text-neutral', _('Neutral')),
+    ('prose-headings:text-neutral-content', _('Neutral Content')),
+    ('prose-headings:text-info', _('Info')),
+    ('prose-headings:text-info-content', _('Info Content')),
+    ('prose-headings:text-success', _('Success')),
+    ('prose-headings:text-success-content', _('Success Content')),
+    ('prose-headings:text-warning', _('Warning')),
+    ('prose-headings:text-warning-content', _('Warning Content')),
+    ('prose-headings:text-error', _('Error')),
+    ('prose-headings:text-error-content', _('Error Content')),
+]
+
 BUTTON_TYPES = [
     ('link', _('Plain Link')),
     ('btn', _('Button')),
@@ -97,8 +120,18 @@ class ColorMixin(models.Model):
     background_color = models.CharField(max_length=31, choices=BACKGROUND_COLORS, default=None, null=True, blank=True)
     foreground_color = models.CharField(max_length=31, choices=FOREGROUND_COLORS, default=None, null=True, blank=True)
 
+class MenuMixin(models.Model):
+    class Meta:
+        abstract=True
+
+    start_level = models.IntegerField(default=0, blank=True)
+    end_level = models.IntegerField(default=100, blank=True)
+    extra_inactive = models.IntegerField(default=2, blank=True)
+    extra_active = models.IntegerField(default=2, blank=True)
+
 class SectionModel(CMSPlugin, ColorMixin):
-    pass
+    is_full_width = models.BooleanField(default=False)
+    is_inner = models.BooleanField(default=False)
 
 class ButtonModel(CMSPlugin):
     label = models.CharField(max_length=127, default=None, null=True, blank=True)
@@ -167,8 +200,9 @@ class ImageModel(CMSPlugin):
         else:
             return self.image.name
 
-class MenuModel(CMSPlugin):
-    start_level = models.IntegerField(default=0, blank=True)
-    end_level = models.IntegerField(default=100, blank=True)
-    extra_inactive = models.IntegerField(default=2, blank=True)
-    extra_active = models.IntegerField(default=2, blank=True)
+class MenuModel(CMSPlugin, MenuMixin):
+    pass
+
+
+class FooterMenuModel(CMSPlugin, MenuMixin):
+    title = models.CharField(max_length=127, default='', null=False, blank=False)

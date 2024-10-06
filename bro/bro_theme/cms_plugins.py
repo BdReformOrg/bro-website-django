@@ -65,10 +65,16 @@ class BroFooterSubscription(CMSPluginBase):
     render_template=_template('footer', 'footer-subscription.html')
     allow_children=True
 
+class BroFooterBrand(CMSPluginBase):
+    module=SECTION_MODULE
+    render_template=_template('footer', 'footer-brand.html')
+    allow_children=True
+
 class BroFooterNav(CMSPluginBase):
     module=SECTION_MODULE
+    model=models.FooterMenuModel
     render_template=_template('footer', 'footer-nav.html')
-    allow_children=True
+    allow_children=False
 
 class BroFooterRow(CMSPluginBase):
     module=SECTION_MODULE
@@ -113,6 +119,7 @@ plugin_pool.register_plugin(BroImage)
 plugin_pool.register_plugin(BroFooterContainer)
 plugin_pool.register_plugin(BroFooterRow)
 plugin_pool.register_plugin(BroFooterNav)
+plugin_pool.register_plugin(BroFooterBrand)
 plugin_pool.register_plugin(BroFooterSubscription)
 
 plugin_pool.register_plugin(BroNavbar)
@@ -132,3 +139,11 @@ class BroGridItem(CMSPluginBase):
 
 plugin_pool.register_plugin(BroGrid)
 plugin_pool.register_plugin(BroGridItem)
+
+class BroSectionTitle(CMSPluginBase):
+    module = CONTENT_MODULE
+    render_template = _template('content', 'section-title.html')
+    allow_children = True
+    child_classes = ['BroPluginGroup', 'TextPlugin']
+
+plugin_pool.register_plugin(BroSectionTitle)

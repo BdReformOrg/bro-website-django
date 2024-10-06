@@ -1,7 +1,7 @@
-<section class="{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
-    <div class="container">
-        <div class="card">
-            <div class="card-body prose max-w-full">
+<section class="{% if instance.is_inner is False and instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.is_inner is False and instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
+    <div class="container{%if instance.is_full_width is True%} max-w-full{%endif%}">
+        <div class="card {% if instance.is_inner is True and instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.is_inner is True and instance.foreground_color %} {{instance.foreground_color}}{% endif %}">
+            <div class="card-body prose max-w-full{% if instance.foreground_color %} {{instance.foreground_color}} prose-headings:{{instance.foreground_color}}{% endif %}">
                 {% load cms_tags %}
                 {% for child in instance.child_plugin_instances %}{% render_plugin child %}{% endfor %}
             </div>

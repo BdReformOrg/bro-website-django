@@ -1,6 +1,6 @@
 <div class="footer py-16">
     {% load cms_tags %}
     {% for child in instance.child_plugin_instances %}
-    <div class="block flex-grow w-full">{% render_plugin child %}</div>
+    {% render_plugin child %}
     {% endfor %}
 </div>

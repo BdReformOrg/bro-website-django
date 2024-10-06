@@ -1,0 +1,5 @@
+<div class="flex w-full flex-shrink-0 flex-grow">
+  <div class="prose">
+    {%load cms_tags%}{%if instance.child_plugin_instances.0%}{%render_plugin instance.child_plugin_instances.0%}{%endif%}
+  </div>
+</div>

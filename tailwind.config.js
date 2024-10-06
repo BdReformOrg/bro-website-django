@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "base.css",
+    "bro/**/models.py",
     "bro/**/static/**/*.{css,js}",
     "bro/**/templates/**/*.html",
     "static/**/*.{css,js}",
@@ -45,7 +46,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        light: {
+        "light": {
           "primary": "#4CAF50", // Green
           "secondary": "#8BC34A", // Light Green
           "accent": "#FFF7ED", // Lime
@@ -55,11 +56,13 @@ module.exports = {
           "success": "#4CAF50", // Green
           "warning": "#FF9800", // Orange
           "error": "#F44336", // Red
-          "--rounded-btn": "100rem"
+          "--rounded-box": "0.5rem",
+          "--rounded-btn": "100rem",
+          "--rounded-badge": "100rem"
         }
       },
       {
-        dark: {
+        "dark": {
           "primary": "#4CAF50", // Green
           "secondary": "#8BC34A", // Light Green
           "accent": "#FFF7ED", // Lime
@@ -69,10 +72,12 @@ module.exports = {
           "success": "#4CAF50", // Green
           "warning": "#FF9800", // Orange
           "error": "#F44336", // Red
-          "--rounded-btn": "100rem"
+          "--rounded-box": "0.5rem",
+          "--rounded-btn": "100rem",
+          "--rounded-badge": "100rem"
         }
       }
     ],
-    darkTheme: 'light'
+    darkTheme: 'dark'
   }
 }

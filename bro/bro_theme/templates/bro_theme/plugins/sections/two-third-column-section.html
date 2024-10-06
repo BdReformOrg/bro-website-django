@@ -1,15 +1,15 @@
-<div class="flex flex-col md:flex-row{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %} rounded-box">
+<div class="flex flex-wrap flex-col md:flex-row{% if instance.background_color %} {{instance.background_color}}{% endif %}{% if instance.foreground_color %} {{instance.foreground_color}}{% endif %} rounded-box {%if instance.is_full_width is False%} mx-auto max-w-6xl{%endif%}">
     {% load cms_tags %}
     {% for child in instance.child_plugin_instances %}
         {% if forloop.counter0|divisibleby:2 %}
         <div class="lg:w-4/6">
-            <div class="card-body prose">
+            <div class="card-body prose{% if instance.foreground_color %} {{instance.foreground_color}} prose-headings:{{instance.foreground_color}}{% endif %}">
                 {% render_plugin child %}
             </div>
         </div>
         {% else %}
         <div class="lg:w-2/6">
-            <div class="card-body prose">
+            <div class="card-body prose{% if instance.foreground_color %} {{instance.foreground_color}} prose-headings:{{instance.foreground_color}}{% endif %}">
                 {% render_plugin child %}
             </div>
         </div>
