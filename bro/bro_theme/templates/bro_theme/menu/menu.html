@@ -4,12 +4,12 @@
 	{% if child.children %}
 	<details class="z-30">
         <summary class="flex flex-row">
-            <a class="bg-base-content flex-grow{% if child.selected %} active{% endif %}{% if child.ancestor %} focus{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}"
+            <a class="flex-grow{% if child.selected %} active{% endif %}{% if child.ancestor %} focus{% endif %}{% if child.sibling %} sibling{% endif %}{% if child.descendant %} descendant{% endif %}"
                 href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">
                 {{ child.get_menu_title }}
             </a>
         </summary>
-        <ul class="min-w-52">
+        <ul class="min-w-52 text-base-content">
             {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
         </ul>
     </details>

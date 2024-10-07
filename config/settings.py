@@ -93,6 +93,8 @@ if DEBUG is True:
     ]
 
 MIDDLEWARE = []
+if DEBUG is True:
+    MIDDLEWARE += ['django_browser_reload.middleware.BrowserReloadMiddleware',]
 MIDDLEWARE += [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -108,10 +110,7 @@ MIDDLEWARE += [
     'cms.middleware.language.LanguageCookieMiddleware',
 ]
 if DEBUG is True:
-    MIDDLEWARE += [
-        "debug_toolbar.middleware.DebugToolbarMiddleware",
-        'django_browser_reload.middleware.BrowserReloadMiddleware',
-    ]
+    MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware',]
 
 ROOT_URLCONF = 'config.urls'
 

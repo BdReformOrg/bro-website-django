@@ -204,6 +204,7 @@ class ButtonModel(CMSPlugin):
         return base.strip()
 
 class ImageModel(CMSPlugin, ImageMixin):
+    apply_rounding = models.BooleanField(default=True)
     pass
 
 class MenuModel(CMSPlugin, MenuMixin):

@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: (theme) => ({
+      fontFamily: (def) => ({
         sans: ['Figtree']
       }),
       typography: (theme) => ({
@@ -47,10 +47,10 @@ module.exports = {
     themes: [
       {
         "light": {
-          "primary": "#4CAF50", // Green
-          "secondary": "#8BC34A", // Light Green
-          "accent": "#FFF7ED", // Lime
-          "neutral": "#F5F5F5", // Light Gray
+          "primary": "#8BC34A", // Green
+          "secondary": "#C3644A", // Light Green
+          "accent": "#FFE4C4", // Lime
+          "neutral": "#EFEFE0", // Light Gray
           "base-100": "#FFFFFF", // White
           "info": "#2196F3", // Blue
           "success": "#4CAF50", // Green
@@ -63,11 +63,11 @@ module.exports = {
       },
       {
         "dark": {
-          "primary": "#4CAF50", // Green
-          "secondary": "#8BC34A", // Light Green
-          "accent": "#FFF7ED", // Lime
-          "neutral": "#454545", // Dark Gray
-          "base-100": "#222222", // Neutral Blackish
+          "primary": "#8BC34A", // Green
+          "secondary": "#C3644A", // Light Green
+          "accent": "#FFE4C4", // Lime
+          "neutral": "#EFEFE0", // Dark Gray
+          "base-100": "#FFFFFF", // Neutral Blackish
           "info": "#2196F3", // Blue
           "success": "#4CAF50", // Green
           "warning": "#FF9800", // Orange
