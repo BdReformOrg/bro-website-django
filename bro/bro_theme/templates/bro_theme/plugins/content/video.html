@@ -1,0 +1,3 @@
+{%with i=instance%}
+{%if i.video%}<video src="{{i.video.url}}" {{i.get_html_attributes}} class="w-full h-full object-cover"></video>{%endif%}
+{%endwith%}

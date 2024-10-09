@@ -2,6 +2,7 @@ from django.utils.translation import gettext_lazy as _
 from django.db import models
 from cms.plugin_base import CMSPlugin
 from cms.models import PageContent
+from filer.fields.file import FilerFileField
 
 from filer.fields.image import FilerImageField
 
@@ -120,6 +121,27 @@ class ColorMixin(models.Model):
     background_color = models.CharField(max_length=31, choices=BACKGROUND_COLORS, default=None, null=True, blank=True)
     foreground_color = models.CharField(max_length=31, choices=FOREGROUND_COLORS, default=None, null=True, blank=True)
 
+class VideoMixin(models.Model):
+    class Meta:
+        abstract = True
+
+    video = FilerFileField(on_delete=models.SET_NULL, related_name='+', null=True, blank=True, default=None)
+    autoplay = models.BooleanField(default=False, blank=True)
+    controls = models.BooleanField(default=False, blank=True)
+    loop = models.BooleanField(default=False, blank=True)
+    muted = models.BooleanField(default=False, blank=True)
+    width = models.CharField(default='', max_length=31, blank=True)
+    height = models.CharField(default='', max_length=31, blank=True)
+
+    @property
+    def get_html_attributes(self):
+        out = ''
+        out += 'autoplay ' if self.autoplay is True else ''
+        out += 'controls ' if self.controls is True else ''
+        out += 'loop ' if self.loop is True else ''
+        out += 'muted ' if self.muted is True else ''
+        return out
+
 class ImageMixin(models.Model):
     class Meta:
         abstract = True
@@ -205,11 +227,16 @@ class ButtonModel(CMSPlugin):
 
 class ImageModel(CMSPlugin, ImageMixin):
     apply_rounding = models.BooleanField(default=True)
+
+class VideoModel(CMSPlugin, VideoMixin):
     pass
 
 class MenuModel(CMSPlugin, MenuMixin):
     pass
 
-
 class FooterMenuModel(CMSPlugin, MenuMixin):
     title = models.CharField(max_length=127, default='', null=False, blank=False)
+
+class VideoHeroSectionModel(CMSPlugin, VideoMixin, ColorMixin):
+    is_full_width = models.BooleanField(default=False)
+    is_inner = models.BooleanField(default=False)

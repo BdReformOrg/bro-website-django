@@ -18,6 +18,12 @@ class BroHeroSection(CMSPluginBase):
     render_template=_template('sections', 'hero-section.html')
     allow_children=True
 
+class BroVideoHeroSection(CMSPluginBase):
+    module=SECTION_MODULE
+    model=models.VideoHeroSectionModel
+    render_template=_template('sections', 'video-hero-section.html')
+    allow_children=True
+
 class BroSection(CMSPluginBase):
     module=SECTION_MODULE
     model=models.SectionModel
@@ -57,6 +63,13 @@ class BroImage(CMSPluginBase):
     module=CONTENT_MODULE
     model=models.ImageModel
     render_template=_template('content', 'image.html')
+    allow_children=False
+    text_enabled=True
+
+class BroVideo(CMSPluginBase):
+    module=CONTENT_MODULE
+    model=models.VideoModel
+    render_template=_template('content', 'video.html')
     allow_children=False
     text_enabled=True
 
@@ -106,6 +119,7 @@ class BroNavbarMenu(CMSPluginBase):
     allow_children=True
 
 plugin_pool.register_plugin(BroHeroSection)
+plugin_pool.register_plugin(BroVideoHeroSection)
 plugin_pool.register_plugin(BroSection)
 plugin_pool.register_plugin(BroTwoColumnSection)
 plugin_pool.register_plugin(BroTwoThirdColumnSection)
@@ -115,6 +129,7 @@ plugin_pool.register_plugin(BroContentRow)
 
 plugin_pool.register_plugin(BroLinkButton)
 plugin_pool.register_plugin(BroImage)
+plugin_pool.register_plugin(BroVideo)
 
 plugin_pool.register_plugin(BroFooterContainer)
 plugin_pool.register_plugin(BroFooterRow)
